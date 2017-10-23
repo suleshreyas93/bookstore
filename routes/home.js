@@ -1,9 +1,16 @@
 var express = require("express");
 var router = express.Router();
+var Genre = require("../model/genre")
 
 //Get Home Page
 router.get("/",function(req,res){
-    res.send("Hello World!");
+    Genre.getGenres(function(err,genres){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(genres);
+    })
 })
 
 module.exports = router;
