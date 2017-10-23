@@ -13,4 +13,16 @@ router.get("/",function(req,res){
     })
 })
 
+//Add genre
+router.post("/",function(req,res){
+    var genre = req.body;
+    Genre.addGenre(genre,function(err,genre){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(genre);
+    })
+})
+
 module.exports = router;
