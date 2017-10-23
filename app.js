@@ -7,7 +7,7 @@ var app = express();
 
 //Connect to database
 mongoose.connect("mongodb://localhost/bookstore");
-var db = mongoose.Connection();
+var db = mongoose.connection;
 
 //Body Parser Middleware
 app.use(bodyParser.json());
