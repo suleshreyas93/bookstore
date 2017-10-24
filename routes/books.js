@@ -48,4 +48,16 @@ router.put("/:_id",function(req,res){
     })
 })
 
+//Delete Book
+router.delete("/:_id",function(req,res){
+    var id = req.params._id;
+    Books.deleteBook(id,function(err,book){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(book);
+    })
+})
+
 module.exports = router;
