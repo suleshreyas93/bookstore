@@ -36,4 +36,16 @@ router.post("/",function(req,res){
     })
 })
 
+router.put("/:_id",function(req,res){
+    var id = req.params._id;
+    var book = req.body;
+    Books.updateBook(id,book,{},function(err,book){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(book);
+    })
+})
+
 module.exports = router;
