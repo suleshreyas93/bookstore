@@ -25,6 +25,7 @@ router.post("/",function(req,res){
     })
 })
 
+//Update Genre
 router.put("/:_id",function(req,res){
     var id = req.params._id;
     var genre = req.body;
@@ -36,5 +37,20 @@ router.put("/:_id",function(req,res){
         res.json(genre);
     })
 })
+
+//Delete Genre
+router.put("/:_id",function(req,res){
+    var id = req.params._id;
+    Genre.deleteGenre(id,function(err,genre){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(genre);
+    })
+    
+})
+
+
 
 module.exports = router;

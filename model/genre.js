@@ -35,3 +35,10 @@ module.exports.updateGenre = function(id,genre,option,callback)
     }
     Genre.findOneAndUpdate(query,updatedGenre,option,callback);
 }
+
+//Delete Genre
+module.exports.deleteGenre = function(id,callback)
+{
+    var deleteQuery = {_id : id};
+    Genre.remove(deleteQuery,callback);
+}
