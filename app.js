@@ -13,6 +13,9 @@ var db = mongoose.connection;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : false}));
 
+//configure client side 
+app.use(express.static(__dirname+"/client"))
+
 //Configure Routes
 var configRoutes = require("./routes");
 configRoutes(app);
