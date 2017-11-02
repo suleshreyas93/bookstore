@@ -1,4 +1,4 @@
-var myApp = angular.module("myBookStoreApp",[]);
+var myApp = angular.module("myBookStoreApp");
 
 
 /*
@@ -12,9 +12,10 @@ var myApp = angular.module("myBookStoreApp",[]);
     $routeParams will help to get variable values from forms. 
 */
 myApp.controller("BooksController",["$scope", "$http", "$location", "$routeParams",function($scope,$http,$location,$routeParams){
+    console.log("BooksController loaded...")
     $scope.getBooks = function(){
-        $http.get("/books",function(response){
-            $scope.books = response;
+        $http.get("/books").then(function(response){
+            $scope.books = response.data
         })
     }
 }])

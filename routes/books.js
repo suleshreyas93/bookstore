@@ -9,7 +9,9 @@ router.get("/",function(req,res){
         {
             throw err;
         }
-        res.json(books)
+        console.log("here");
+        console.log(books);
+     return res.json(books);
     })
 })
 
