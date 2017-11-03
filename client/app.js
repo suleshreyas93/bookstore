@@ -5,11 +5,11 @@ myApp.config(function($routeProvider){
         controller:"BooksController",
         templateUrl:"views/books.html"
     })
-    .when("/books",{
+    .when("/viewbooks",{
         controller:"BooksController",
         templateUrl:"views/books.html"
     })
-    .when("/books/details/:id",{
+    .when("/details/:id",{
         controller:"BooksController",
         templateUrl:"views/book_details.html"
     })

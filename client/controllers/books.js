@@ -18,4 +18,13 @@ myApp.controller("BooksController",["$scope", "$http", "$location", "$routeParam
             $scope.books = response.data
         })
     }
+
+    $scope.getBook = function(){
+        let id = $routeParams.id;
+        $http.get("/books/details/"+id).then(function(response){
+            $scope.book = response.data
+        })
+    }
+
+    
 }])

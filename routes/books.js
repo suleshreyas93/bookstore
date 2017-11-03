@@ -9,11 +9,32 @@ router.get("/",function(req,res){
         {
             throw err;
         }
-        console.log("here");
-        console.log(books);
+        
      return res.json(books);
     })
 })
+
+router.get("/viewbooks",function(req,res){
+    Books.getBooks(function(err,books){
+        if(err)
+        {
+            throw err;
+        }
+        
+     return res.json(books);
+    })
+})
+
+router.get("/details/:_id",function(req,res){
+    Books.getBookById(req.params._id,function(err,book){
+        if(err)
+        {
+            throw err;
+        }
+        return res.json(book);
+    })
+})
+
 
 //Get Book By Id
 router.get("/:_id",function(req,res){
