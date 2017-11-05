@@ -1,3 +1,5 @@
+<a class="btn btn-primary" href="#!/books">Go Back</a>
+<br/><br/>
 <div class="panel panel-default" ng-init="getBook()">
     <div class="panel-heading">
       <h3 class="panel-title">{{book.title}}</h3>
@@ -15,6 +17,8 @@
                 <b><li class="list-group-item">Publisher : {{book.publisher}}</li></b>
                 <b><li class="list-group-item">Pages : {{book.pages}}</li></b>
             </ul>
+
+            <a target="_blank" class="btn btn-primary" href="{{book.buy_url}}">Buy On Barnes and Nobles</a>
         </div>
       </div>
     </div>

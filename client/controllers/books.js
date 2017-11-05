@@ -26,5 +26,13 @@ myApp.controller("BooksController",["$scope", "$http", "$location", "$routeParam
         })
     }
 
+    $scope.addBook = function(){
+        
+        $http.post("/books/add",$scope.book).then(function(response){
+            console.log("Hello")
+            window.location.href = "/#!/books"
+        })
+    }
+
     
 }])

@@ -47,15 +47,20 @@ router.get("/:_id",function(req,res){
     })
 })
 
+
+
+
+
 //Add Book
-router.post("/",function(req,res){
+router.post("/add",function(req,res){
     var book = req.body;
     Books.addBook(book,function(err,book){
         if(err)
         {
             throw err;
         }
-        res.json(book);
+        
+        return book;
     })
 })
 
